@@ -1,1 +1,1 @@
-# This repository have scripts for scrapping data from indian institutions. 
+ This repository have scripts for scrapping data from indian institutions. 
