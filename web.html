@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+    <style>
+
+        .container {
+            width: 80%;
+            max-width: 800px; /* Limit the maximum width to 800px */
+            margin: 0 auto;
+            padding: 5% 3%; /* Adjust padding as needed */
+            background-color: #f0f0f0;
+        }
+        /* Define table styles */
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+
+        /* Additional CSS for transitions and styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .keywords {
+            background-color: #ccecf0; /* Light Khaki background color */
+            border: 2px solid #d4af37; /* Goldenrod border */
+            padding: 20px;
+            margin: 20px;
+            font-size: 18px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Analysis and Statistics</h1>
+    </header>
+
+    <main>
+        <section id="home" class="in-view">
+            <h2>Welcome to Our Data Analysis Website</h2>
+            <p>This website provides valuable insights and statistics on various topics.</p>
+        </section>
+
+        <section id="about" class="in-view">
+            <h2>About Us</h2>
+            <p>We are a team of data analysts dedicated to providing accurate and meaningful data insights.</p>
+        </section>
+
+        <section id="statistics" class="in-view">
+            <h2>Statistics</h2>
+            <p>Explore our latest statistical data and visualizations:</p>
+            <!-- Add charts and graphs here using JavaScript libraries like D3.js or Chart.js -->
+        </section>
+
+        <section id="analysis" class="in-view">
+            <h2>Data Analysis</h2>
+            <p>Learn about our data analysis methodologies and case studies:</p>
+            <br>
+            <div>
+            <h4> 1. We scraped the section of "research area" from each IISER Mohali's faculty webpage and analysed it with keyword classifiers algorithms. </h4> 
+            <div class="keywords">
+                    <div id="results">
+                        <p>Keywords:</p>
+                        <label><input type="checkbox" value="Keyword1"> Genome regulation (10) </label>
+                        <label><input type="checkbox" value="Keyword2"> Functional Analysis (9) </label>
+                        <label><input type="checkbox" value="Keyword3"> Developmental genetics </label>
+                        <label><input type="checkbox" value="Keyword1"> Optical trapping </label>
+                        <label><input type="checkbox" value="Keyword2"> Environmental science  </label>
+                        <label><input type="checkbox" value="Keyword3"> South Asian literary cultures </label>
+                        <label><input type="checkbox" value="Keyword1"> Differential algebraic geometry </label>
+                        <label><input type="checkbox" value="Keyword2"> Soft condensed matter physics </label>
+                        <label><input type="checkbox" value="Keyword2"> Quantum chemistry </label>
+                        <label><input type="checkbox" value="Keyword1"> Archaeology </label>
+                        <label><input type="checkbox" value="Keyword2"> Indian monsoons</label>
+                        <label><input type="checkbox" value="Keyword3"> Molecular mechanisms underlying retina regeneration </label>
+                        <label><input type="checkbox" value="Keyword1"> Ultrafast quantum dynamics  </label>
+                        <label><input type="checkbox" value="Keyword2"> NMR quantum computing </label>
+                        <label><input type="checkbox" value="Keyword3"> Climate modellin </label>
+                        <label><input type="checkbox" value="Keyword3"> Experimental high energy physics </label>
+                        <!-- Add more keywords as needed -->
+                    </div>
+            
+            </div>
+        </div>
+        <h1>Keywords Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Description</th>
+                <th>Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Genome regulation</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Functional Analysis</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Developmental genetics</td>
+                <td>7</td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+            <!-- Include data analysis content here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Data Analysis Website</p>
+    </footer>
+
+    <script>
+        // Add scroll animations
+        const sections = document.querySelectorAll('section');
+
+        function checkInView() {
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('in-view');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkInView);
+        checkInView();
+    </script>
+    
+</div>
+</body>
+</html>
