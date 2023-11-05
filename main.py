@@ -39,8 +39,11 @@ soup = BeautifulSoup(response.text,'lxml')  #difference between html and lxml
 # print(soup.prettify())
 all_tags = soup.find_all('a')
 # print(all_tags[60])
+
+
 index = 0
 for tag in all_tags[118:225]: #[118:225] the correct one!!
+
     index = index+1
     # print(index)
     if index != 27: #exclude the 503 undispencreries.
@@ -126,39 +129,43 @@ cur.execute("SELECT * FROM IISERM2") #we need to delete the table data and run t
 rows = cur.fetchall()
 
 st = ''' '''
-r = Rake()
+list_ex = []
+r = Rake(min_length=5, max_length=15)
 
 for row in rows:
-    # print(row)
+    print(row)
     st = st + ' ' + str(row[2])
-    
+    list_ex.append(str(row[2]))
+
+
 frequency = []
 keywords = []
-experience_string = st
+experience_string = list_ex
 r.extract_keywords_from_text(st)
 for freq ,keyword in r.get_ranked_phrases_with_scores():
     if freq > 10:
-        print(freq,keyword)
+        # print(freq,keyword)
         frequency.append(freq)
         keywords.append(keyword)
 
 
+r = Rake(min_length=5, max_length=15)
 
 st = ''' '''
+list_tag= []
 for row in rows:
-    # print(row)
+    print(row)
     st = st + ' ' + str(row[1])
+    list_tag.append(str(row[1]))
     
 frequency_tagline = []
 keywords_tagline = []
 tagline_string = r.extract_keywords_from_text(st)
 for freq ,keyword in r.get_ranked_phrases_with_scores():
     if freq > 10:
-        print(freq,keyword)
+        # print(freq,keyword)
         frequency_tagline.append(freq)
         keywords_tagline.append(keyword)
-
-
 
 ### pickling the data!!    
 data = {"frequency": frequency,
@@ -171,6 +178,3 @@ data = {"frequency": frequency,
 with open('analysis.pkl','wb') as file:
     pickle.dump(data, file)
 db.close()
-#### saving the important analysis using pickle
-
-

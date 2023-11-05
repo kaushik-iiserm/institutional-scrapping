@@ -8,12 +8,22 @@
     <style>
 
         .container {
-            width: 80%;
-            max-width: 800px; /* Limit the maximum width to 800px */
-            margin: 0 auto;
-            padding: 5% 3%; /* Adjust padding as needed */
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding: 5% 3%;
             background-color: #f0f0f0;
         }
+        
+        /* Add dynamic padding based on screen size */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 3% 2%;
+            }
+        }
+        
+        
+        
         /* Define table styles */
         table {
             font-family: Arial, sans-serif;
@@ -42,7 +52,7 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
-            padding: 0;
+            padding: 10;
         }
 
         header {
@@ -70,6 +80,12 @@
         .in-view {
             opacity: 1;
             transform: translateY(0);
+            max-width: 800px;
+            margin: auto;
+            
+         
+
+
         }
         .keywords {
             background-color: #ccecf0; /* Light Khaki background color */
@@ -80,22 +96,34 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+
+        img {
+            border: 2px solid black;
+        }
+
+        p {
+            line-height: 1.6; /* 1.5 times the font size */
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Data Analysis and Statistics</h1>
+        <h1>Institutional web scrapping and analysis</h1>
     </header>
 
     <main>
         <section id="home" class="in-view">
             <h2>Welcome to Our Data Analysis Website</h2>
-            <p>This website provides valuable insights and statistics on various topics.</p>
+            <p>This website presents the project we made for our data science course: We scrap each faculty's webpage from institute id of IISER Pune, IISER Mohali and IISER Kolkata and try to derive something analytic.</p>
         </section>
-
         <section id="about" class="in-view">
             <h2>About Us</h2>
-            <p>We are a team of data analysts dedicated to providing accurate and meaningful data insights.</p>
+            <p>We are a team of data analysts. <br> <br>
+            1. Kaushik Gupta MS20129 <br> <br>
+            2. Rohit Khandhare MS20234<br> <br>
+            3. Samannay Bhuyan MS20081
+            
+            </p>
         </section>
 
         <section id="statistics" class="in-view">
@@ -105,12 +133,17 @@
         </section>
 
         <section id="analysis" class="in-view">
-            <h2>Data Analysis</h2>
-            <p>Learn about our data analysis methodologies and case studies:</p>
-            <br>
+            <h2>Data Analysis and Case studies:</h2>
+            <p>We present our data analysis methodologies and case studies:</p>
+            <div class="header">
+                <h3>RAKE</h3>
+                <p>Rapid Automatic Keyword Extraction (RAKE) is a well-known keyword extraction method which uses a list of stopwords and phrase delimiters to detect the most relevant words or phrases in a piece of text.</p>
+            </div>
+            
             <div>
-            <h4> 1. We scraped the section of "research area" from each IISER Mohali's faculty webpage and analysed it with keyword classifiers algorithms. </h4> 
-            <div class="keywords">
+            <h4> 1. We scraped the section of "research area" and "research focus" sections from each IISER Mohali's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc. </h4> 
+            <img src="/images/research.png" alt="Research">
+            <!-- <div class="keywords">
                     <div id="results">
                         <p>Keywords:</p>
                         <label><input type="checkbox" value="Keyword1"> Genome regulation (10) </label>
@@ -132,8 +165,8 @@
                         <!-- Add more keywords as needed -->
                     </div>
             
-            </div>
-        </div>
+            <!-- </div> --> 
+        <!-- </div> -->
         <h1>Keywords Table</h1>
     <table>
         <thead>
@@ -159,10 +192,50 @@
                 <td>Developmental genetics</td>
                 <td>7</td>
             </tr>
-            
+
+            <tr>
+                <td>4</td>
+                <td>Environmental science</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Quantum information</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Soft condensed matter physics</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Archaeology</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Algebraic geometry</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Particle physics</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Molecular cell biology</td>
+                <td>5</td>
+            </tr>
+
             
         </tbody>
     </table>
+    <br>
+    <h3>More keywords are mentioned here:</h3>
+    <p> geometric group theory, ultrafast quantum dynamics quantum aspects, film studies, algebraic geometry, quantum gravity, quantum chemistry, systems biology, molecular cell biology research, experimental high energy physics, indian monsoons, plant developmental genetics, medicinal chemistry, photoswitchable functional materials, physical organic chemistry spectroscopy, systems chemistry nonlinear dynamics, temperature scanning probe microscopy, general relativity, galois group algebraic geometry, harmonic analysis, cellular stress biology, number theory, developmental biology, synthetic organic chemistry, evolutionary biology, evolutionary genetics, theoretical chemistry, high energy astrophysics, public policy, functional organic materials, quantum optics, dna replication cellular virology,  astrophysics.
+    </p>
             <!-- Include data analysis content here -->
         </section>
     </main>
