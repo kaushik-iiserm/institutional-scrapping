@@ -14,7 +14,10 @@
             padding: 5% 3%;
             background-color: #f0f0f0;
         }
-        
+        .container2 {
+            display: flex; /* Use flexbox to create a horizontal layout */
+            align-items: center; /* Align items vertically in the center */
+        }
         /* Add dynamic padding based on screen size */
         @media screen and (max-width: 768px) {
             .container {
@@ -108,20 +111,21 @@
 </head>
 <body>
     <header>
-        <h1>Institutional web scrapping and analysis</h1>
+        <h1> Institutional web scrapping and Analysis 
+        </h1>
     </header>
 
     <main>
         <section id="home" class="in-view">
             <h2>Welcome to Our Data Analysis Website</h2>
-            <p>This website presents the project we made for our data science course: We scrap each faculty's webpage from institute id of IISER Pune, IISER Mohali and IISER Kolkata and try to derive something analytic.</p>
+            <p>This website presents the project we made for our data science course: We scrap each faculty's webpage from official institute websites of IISER Pune, IISER Mohali and IISER Kolkata and try to derive something analytic.</p>
         </section>
         <section id="about" class="in-view">
             <h2>About Us</h2>
             <p>We are a team of data analysts. <br> <br>
             1. Kaushik Gupta MS20129 <br> <br>
             2. Rohit Khandhare MS20234<br> <br>
-            3. Samannay Bhuya MS20081
+            3. Samannay Bhuyan MS20081
             
             </p>
         </section>
@@ -173,7 +177,7 @@
             <tr>
                 <th>Index</th>
                 <th>Description</th>
-                <th>Frequency</th>
+                <th>Scores</th>
             </tr>
         </thead>
         <tbody>
@@ -233,11 +237,14 @@
         </tbody>
     </table>
     <br>
-    <h3>More keywords are mentioned here:</h3>
-    <p> geometric group theory, ultrafast quantum dynamics quantum aspects, film studies, algebraic geometry, quantum gravity, quantum chemistry, systems biology, molecular cell biology research, experimental high energy physics, indian monsoons, plant developmental genetics, medicinal chemistry, photoswitchable functional materials, physical organic chemistry spectroscopy, systems chemistry nonlinear dynamics, temperature scanning probe microscopy, general relativity, galois group algebraic geometry, harmonic analysis, cellular stress biology, number theory, developmental biology, synthetic organic chemistry, evolutionary biology, evolutionary genetics, theoretical chemistry, high energy astrophysics, public policy, functional organic materials, quantum optics, dna replication cellular virology,  astrophysics.
-    </p>
+    
             <!-- Include data analysis content here -->
         </section>
+    <h4> 2. Secondly, we scraped the section of "name", "academic background" and "research focus" sections from each IISER Pune's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc.
+    </h4>
+    <br>
+    <img src="./images/iiser-pune.png", height="200px", width="'200px">
+
     </main>
 
     <footer>
@@ -261,6 +268,6 @@
         checkInView();
     </script>
     
-</div>
+
 </body>
 </html>
