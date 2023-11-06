@@ -2,3 +2,4 @@
 - IISER-Mohali
 - IISER-Pune
 - IISER-Kolkata
+- IISER
