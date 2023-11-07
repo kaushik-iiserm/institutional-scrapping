@@ -107,32 +107,52 @@
         p {
             line-height: 1.6; /* 1.5 times the font size */
         }
+
+
+        .image-container {
+            display: flex;
+        }
+
+        .image-container img {
+            width: 60%;
+            height: 600%;
+        }
+
+        .dashed-line {
+            width: auto;
+            height: 2px;
+            border-bottom: 2px dashed #000; /* Set the line style to dashed and color to black */
+        }
+
     </style>
+
 </head>
 <body>
     <header>
-        <h1> Institutional web scrapping and Analysis
+        <h1> Institutional Web Scrapping and Analysis
         </h1>
     </header>
 
     <main>
         <section id="home" class="in-view">
             <h2>Welcome to Our Data Analysis Website</h2>
-            <p>This website presents the project we made for our data science course: We scrap each faculty's webpage from official institute websites of IISER Pune, IISER Mohali and IISER Kolkata and try to derive something analytic.</p>
+            <p>This website presents the project we made for our data science course. We have scrapped each faculty's webpage from official institute websites of IISER Pune, IISER Mohali and IISER Kolkata. Then, the data of research fields and educational background of the faculty is analysed.</p>
         </section>
         <section id="about" class="in-view">
             <h2>About Us</h2>
-            <p>We are a team of data analysts. <br> <br>
-            1. Kaushik Gupta MS20129 <br> <br>
-            2. Rohit Khandhare MS20234<br> <br>
+            <p>The team: <br> 
+            1. Kaushik Gupta MS20129 <br> 
+            2. Rohit Khandhare MS20234<br> 
             3. Samannay Bhuyan MS20081
 
             </p>
         </section>
 
         <section id="statistics" class="in-view">
-            <h2>Statistics</h2>
-            <p>Explore our latest statistical data and visualizations:</p>
+            <h2>Web-Scrapping</h2>
+            <p>The Python package Beautiful Soup to used to scrap each webpage of the faculty (around 500 webpages). Initially, an sqlite3 database is created and a connection is established with it.  Then, a connection is established with the website containing the details of the faculty. We loop through the individual webpages of the faculty and scrap the data contained in it. The scrapped text is processed according to the structure of the webpage to get the details of name, research area and educational background of the faculty. This data is saved in a tabular format in the sqlite3 database.  </p>
+            <br>
+            <p> The goal of the project is to analyse the research area and educational qualifications. For this, all the text in the research area section is concatenated. The algorithm NLTK Rake is used to get the frequency of research fields in this text. Next, the library spaCy is used to get the name and frequency of research institutes. This data is used and analysed to plot the percentage of Indian and foreign institutes. Finally, the contribution of various types of institutes like IITs, Central Research Institutes and State Public universities is analysed.</p>
             <!-- Add charts and graphs here using JavaScript libraries like D3.js or Chart.js -->
         </section>
 
@@ -144,8 +164,16 @@
                 <p>Rapid Automatic Keyword Extraction (RAKE) is a well-known keyword extraction method which uses a list of stopwords and phrase delimiters to detect the most relevant words or phrases in a piece of text.</p>
             </div>
 
+            <div class="header">
+                <h3>SPACY</h3>
+                <p>
+                 spaCy is a popular open-source natural language processing (NLP) library and framework. It is used for various NLP tasks, such as tokenization, part-of-speech tagging, named entity recognition, dependency parsing, and more. It was used to extract the name of the universities.</p>
+            </div>
+
             <div>
-            <h4> 1. We scraped the section of "research area" and "research focus" sections from each IISER Mohali's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc. </h4>
+            <h2>1. IISER-Mohali case-study:</h2>
+        
+            <h4>  We scraped the section of "research area" and "research focus" sections from each IISER Mohali's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc. </h4>
             <img src="/images/research.png" alt="Research">
             <!-- <div class="keywords">
                     <div id="results">
@@ -184,66 +212,164 @@
             <tr>
                 <td>1</td>
                 <td>Genome regulation</td>
-                <td>10</td>
+                <td>102</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Functional Analysis</td>
-                <td>8</td>
+                <td>102</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Developmental genetics</td>
-                <td>7</td>
+                <td>102</td>
             </tr>
 
             <tr>
                 <td>4</td>
                 <td>Environmental science</td>
-                <td>7</td>
+                <td>82</td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>Quantum information</td>
-                <td>7</td>
+                <td>82</td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>Soft condensed matter physics</td>
-                <td>6</td>
+                <td>57</td>
             </tr>
             <tr>
                 <td>7</td>
                 <td>Archaeology</td>
-                <td>5</td>
+                <td>57</td>
             </tr>
             <tr>
                 <td>8</td>
                 <td>Algebraic geometry</td>
-                <td>5</td>
+                <td>51</td>
             </tr>
             <tr>
                 <td>9</td>
                 <td>Particle physics</td>
-                <td>5</td>
+                <td>51</td>
             </tr>
             <tr>
                 <td>10</td>
                 <td>Molecular cell biology</td>
-                <td>5</td>
+                <td>43</td>
             </tr>
 
 
         </tbody>
     </table>
     <br>
+    <p>The score presented here talks about the correlation between different strings which will be more discussed in the presentation.</p>
+    <div class="dashed-line"></div>
 
             <!-- Include data analysis content here -->
         </section>
-    <h4> 2. We scraped the section of "name", "academic background" and "research focus" sections from each IISER Pune's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc.
+    <h2>2. IISER-Pune Case study:</h2>
+    <h4>  We scraped the "Name", "Academic Background" and "Research Area" sections from each webpage of IISER Pune faculty. The data was again analysed using NLP algorithms like RAKE and Spacy.
     </h4>
     <br>
     <img src="./images/iiser-pune.png", height="200px", width="'200px">
+
+        <h1>Keywords Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Description</th>
+                <th>Scores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Analytic Number Theory</td>
+                <td>67</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Plasmodium Epigenetics</td>
+                <td>67</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Chromosome Biology</td>
+                <td>67</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td> Experimental Particle Physics</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td> Theoretical Biophysics </td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td> Chemical Biology</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td> Inorganic Chemistry </td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td> Condensed Matter Physics </td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Computational Biophysics</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Materials Science</td>
+                <td>26</td>
+            </tr>
+             <tr>
+                <td>11</td>
+                <td>Algebraic Geometry</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Modern Indian Political Thought </td>
+                <td>20</td>
+            </tr>
+             <tr>
+                <td>13</td>
+                <td>Number Theory</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Cosmology</td>
+                <td>18</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+    <br>
+  
+    <h3> We present the analysis for the academic background of IISER Pune faculties. </h3>
+    <div class="image-container">
+        <img class="image" src="./IISER_Pune/All_Institutes.png", class="image">
+        <img class="image" src="./IISER_Pune/Indian_Institutions.png",class="image">
+
+    </div>
 
     </main>
 
