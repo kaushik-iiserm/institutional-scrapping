@@ -14,11 +14,10 @@ proxy_host = '172.16.2.252'
 proxy_port = '3128'
 
 ### Maintaining the first database
-
 db = sqlite3.connect("iiserm.db")
 cur = db.cursor()
 
-cur.execute(" CREATE TABLE IISERM2( NAME, Research_area , Research_focus )")
+cur.execute(" CREATE TABLE IISERM( NAME, Research_area , Research_focus )")
 
 # Create a dictionary with the proxy settings
 proxies = {
@@ -119,21 +118,25 @@ for tag in all_tags[118:225]: #[118:225] the correct one!!
             print("No href attribute found.")
         ### table is created, just create the instance for the (name, research_focus, ...) into the sqlite3
         faculty_detail = (name,research_area,research_focus)
-        cur.execute("INSERT INTO IISERM2  VALUES (?, ?, ?)", faculty_detail)
+        cur.execute("INSERT INTO IISERM  VALUES (?, ?, ?)", faculty_detail)
 
 db.commit() #saving it the table
 
-#fetching
-
-cur.execute("SELECT * FROM IISERM2") #we need to delete the table data and run the code once when the code is bug-free!!
+#fetching the data from sqlite3 for analysis
+cur.execute("SELECT * FROM IISERM") #we need to delete the table data and run the code once when the code is bug-free!!
 rows = cur.fetchall()
 
 st = ''' '''
 list_ex = []
+
+## We create the instances of Rake and put our combined string for keyword extractions.
+
+
+## Research focus
 r = Rake(min_length=5, max_length=15)
 
 for row in rows:
-    print(row)
+    # print(row)
     st = st + ' ' + str(row[2])
     list_ex.append(str(row[2]))
 
@@ -148,13 +151,13 @@ for freq ,keyword in r.get_ranked_phrases_with_scores():
         frequency.append(freq)
         keywords.append(keyword)
 
-
+## Research area
 r = Rake(min_length=5, max_length=15)
 
 st = ''' '''
 list_tag= []
 for row in rows:
-    print(row)
+    # print(row)
     st = st + ' ' + str(row[1])
     list_tag.append(str(row[1]))
     
@@ -167,6 +170,9 @@ for freq ,keyword in r.get_ranked_phrases_with_scores():
         frequency_tagline.append(freq)
         keywords_tagline.append(keyword)
 
+## After this keywords are manually extracted ans we also create a pickle file to share it among each other.
+
+
 ### pickling the data!!    
 data = {"frequency": frequency,
     "keyword": keywords,
@@ -178,3 +184,5 @@ data = {"frequency": frequency,
 with open('analysis.pkl','wb') as file:
     pickle.dump(data, file)
 db.close()
+
+print('Done!')
