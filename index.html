@@ -24,9 +24,9 @@
                 padding: 3% 2%;
             }
         }
-        
-        
-        
+
+
+
         /* Define table styles */
         table {
             font-family: Arial, sans-serif;
@@ -85,8 +85,8 @@
             transform: translateY(0);
             max-width: 800px;
             margin: auto;
-            
-         
+
+
 
 
         }
@@ -111,7 +111,7 @@
 </head>
 <body>
     <header>
-        <h1> Institutional web scrapping and Analysis 
+        <h1> Institutional web scrapping and Analysis
         </h1>
     </header>
 
@@ -126,7 +126,7 @@
             1. Kaushik Gupta MS20129 <br> <br>
             2. Rohit Khandhare MS20234<br> <br>
             3. Samannay Bhuyan MS20081
-            
+
             </p>
         </section>
 
@@ -143,9 +143,9 @@
                 <h3>RAKE</h3>
                 <p>Rapid Automatic Keyword Extraction (RAKE) is a well-known keyword extraction method which uses a list of stopwords and phrase delimiters to detect the most relevant words or phrases in a piece of text.</p>
             </div>
-            
+
             <div>
-            <h4> 1. We scraped the section of "research area" and "research focus" sections from each IISER Mohali's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc. </h4> 
+            <h4> 1. We scraped the section of "research area" and "research focus" sections from each IISER Mohali's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc. </h4>
             <img src="/images/research.png" alt="Research">
             <!-- <div class="keywords">
                     <div id="results">
@@ -168,8 +168,8 @@
                         <label><input type="checkbox" value="Keyword3"> Experimental high energy physics </label>
                         <!-- Add more keywords as needed -->
                     </div>
-            
-            <!-- </div> --> 
+
+            <!-- </div> -->
         <!-- </div> -->
         <h1>Keywords Table</h1>
     <table>
@@ -233,17 +233,87 @@
                 <td>5</td>
             </tr>
 
-            
+
         </tbody>
     </table>
     <br>
-    
+
             <!-- Include data analysis content here -->
         </section>
     <h4> 2. Secondly, we scraped the section of "name", "academic background" and "research focus" sections from each IISER Pune's faculty webpage and analysed it using some NLP algorithms like RAKE, Keybert, etc.
     </h4>
     <br>
     <img src="./images/iiser-pune.png", height="200px", width="'200px">
+
+
+        <h1>Keywords Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Description</th>
+                <th>Scores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Genome regulation</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Functional Analysis</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Developmental genetics</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Environmental science</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Quantum information</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Soft condensed matter physics</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Archaeology</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Algebraic geometry</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Particle physics</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Molecular cell biology</td>
+                <td>5</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <br>
+
+
 
     </main>
 
@@ -267,7 +337,7 @@
         window.addEventListener('scroll', checkInView);
         checkInView();
     </script>
-    
+
 
 </body>
 </html>
