@@ -22,7 +22,7 @@ The script is properly commented for readers to easily follow along..
 We also built a webpage that we use to explain all the methods we used for our scrapping and analysis.
 
 #### Folders of IISER_Pune and IISER_Kolkata
-This folder includes the seperate analysis content for these institutes. IISER Mohali's analysis is done by the main.py itself.
+This folder includes the seperate analysis contents including code, database file, plots for these institutes. IISER Mohali's analysis is done by the main.py itself.
 
 ## Usage
 
