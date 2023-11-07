@@ -16,6 +16,14 @@ The main script, `main.py`, serves the following purposes:
 
 3. **Data Analysis:** The script also includes functionality to analyze the scraped data, allowing you to gain insights or perform various operations on the collected information.
 
+The script is properly commented for readers to easily follow along..
+
+#### Webpage
+We also built a webpage that we use to explain all the methods we used for our scrapping and analysis.
+
+#### Folders of IISER_Pune and IISER_Kolkata
+This folder includes the seperate analysis content for these institutes. IISER Mohali's analysis is done by the main.py itself.
+
 ## Usage
 
 To use the `main.py` script, follow these steps:
