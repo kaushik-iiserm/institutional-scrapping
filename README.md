@@ -6,7 +6,7 @@ This repository contains Python scripts for scraping research data from three le
 2. [Indian Institutes of Science Education and Research (IISER) Pune](https://www.iiserpune.ac.in/institute/people)
 3. [Indian Institutes of Science Education and Research (IISER) Kolkata](https://www.iiserkol.ac.in/web/en/people/faculty/#gsc.tab=0)
 
-We analysed the research area and academic background of the faculties to derive some conclusive study.
+We analysed the research area and academic background of the faculties to derive some conclusive study (Data and plot for analysis are presented in the webpage and corresponding folders).
 
 ## Overview
 
